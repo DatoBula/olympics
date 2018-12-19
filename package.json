@@ -4,7 +4,7 @@
   "description": "Test problem",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "import": "node import/"
   },
   "dependencies": {
     "sqlite3": "^4.0.4"

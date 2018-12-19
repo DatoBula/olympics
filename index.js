@@ -1,5 +1,5 @@
-let [,, chart_name, ...params] = process.argv;
+const cmd = require('./cmd')
 
-console.log(chart_name, params)
+let [, , chartName, ...params] = process.argv
 
-require('./printer')([["NOC", "Amount"], ["USA", 50], ["RUS", 30], ["UGA", 10]]);
+cmd.parseCommand(chartName, params)
