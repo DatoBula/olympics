@@ -78,7 +78,8 @@ function getMedalCode(medal) {
   return 0
 }
 
-function trimNameFromBrackets(name) {
+function trimName(name) {
+  name = name.replace(/".*?"/g, '')
   return name.replace(/\(.*?\)/g, '')
 }
 
@@ -101,7 +102,7 @@ async function importLine(line) {
   if (height !== 'NA') athleteParams.height = height
   if (weight !== 'NA') athleteParams.weight = weight
   let athlete = {
-    full_name: trimNameFromBrackets(name),
+    full_name: trimName(name),
     year_of_birth: yearOfBirth,
     sex: sexCode === 'M' ? 1 : 0,
     params: JSON.stringify(athleteParams),
